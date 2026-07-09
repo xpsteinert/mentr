@@ -23,8 +23,7 @@ publish publicly, no real data.
 mkdir .ollama-models
 ```
 ```bash
-k3d cluster create mentr --agents 2 -p "8080:80@loadbalancer" \
-  --volume "$(pwd)/.ollama-models:/data/ollama-models@all"
+k3d cluster create mentr --agents 2 -p "8080:80@loadbalancer" --volume "$(pwd)/.ollama-models:/data/ollama-models@all"
 ```
 ```bash
 kubectl apply -k kustomize/overlays

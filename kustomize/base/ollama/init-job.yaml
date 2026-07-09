@@ -7,7 +7,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: ollama-model-init
-  namespace: ai-stack
+  namespace: mentr
 spec:
   backoffLimit: 6
   template:

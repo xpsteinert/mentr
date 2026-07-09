@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mentr-webui
-  namespace: ai-stack
+  namespace: mentr
 spec:
   template:
     spec:

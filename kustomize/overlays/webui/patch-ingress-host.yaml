@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mentr-webui
-  namespace: ai-stack
+  namespace: mentr
 spec:
   rules:
     - host: ki.localhost

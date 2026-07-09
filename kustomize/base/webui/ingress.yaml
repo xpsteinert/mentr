@@ -5,7 +5,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webui
-  namespace: ai-stack
+  namespace: mentr
 spec:
   ingressClassName: traefik
   rules:
