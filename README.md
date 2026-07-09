@@ -3,14 +3,14 @@
 # mentr
 
 **mentr** is a local your local work body. You can ask a chat interface questions about internal documentation instead of hunting for
-it themselves. Everything runs on your own machine via [k3d](https://k3d.io/) — no cloud, no external API calls, no data leaves your laptop.
+it themselves. Everything runs on your own machine via — no cloud, no external API calls, no data leaves your laptop.
 
 This repo is a companion to the blog post *"Run your own onboarding
-assistant with local RAG and Ollama (k3d)."* It deploys
+assistant with local RAG and Ollama ."* It deploys
 [Ollama](https://ollama.com/) (running the `llama3.2:3b` chat model and
 the `nomic-embed-text` embedding model) and
 [Open WebUI](https://openwebui.com/) (chat frontend with a built-in
-knowledge-base / RAG feature) into a local Kubernetes cluster, wired
+knowledge-base / RAG feature) into a Kubernetes cluster, wired
 together with [Kustomize](https://kustomize.io/).
 
 The example knowledge base (`docs/`) contains three fictional HR
@@ -22,6 +22,9 @@ publish publicly, no real data.
 ```bash
 mkdir .ollama-models
 ```
+
+If you already have a running cluster, you can skip the k3d cluster create step
+
 ```bash
 k3d cluster create mentr --agents 2 -p "8080:80@loadbalancer" --volume "$(pwd)/.ollama-models:/data/ollama-models@all"
 ```
@@ -29,7 +32,7 @@ k3d cluster create mentr --agents 2 -p "8080:80@loadbalancer" --volume "$(pwd)/.
 kubectl apply -k kustomize/overlays
 ```
 
-The first command creates the local folder where the models will be downladed, the second a 3-node k3d cluster (1 server + 2 agents)
+The first command creates the local folder where the models will be downladed, the second will create a 3-node k3d cluster (1 server + 2 agents)
 and bind-mounts a local `.ollama-models/` directory into every node, so
 downloaded models survive cluster teardown. The second deploys Ollama,
 Open WebUI, and a one-off Job that pulls both models. This runs on CPU
