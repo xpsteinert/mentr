@@ -103,7 +103,7 @@ Requires an NVIDIA GPU (8+ GB VRAM comfortably covers `llama3.2:3b` +
 Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 with Docker configured to use the `nvidia` runtime, plus k3d v5.4.6+
 for `--gpus` passthrough. If the Ollama pod stays `Pending` afterward,
-run `kubectl -n ai-stack describe pod -l app=ollama` and check for
+run `kubectl -n mentr describe pod -l app=ollama` and check for
 `Insufficient nvidia.com/gpu` — that means the device plugin hasn't
 picked up the GPU yet, or the Container Toolkit isn't set up correctly
 on the host.
@@ -132,7 +132,7 @@ kubectl apply -k kustomize/base/webui           # generic
 kubectl apply -k kustomize/overlays/webui       # ki.localhost ingress + resource limits
 ```
 
-The component-only targets don't include the `ai-stack` Namespace
+The component-only targets don't include the `mentr` Namespace
 object — apply `kubectl apply -k kustomize/base/namespace` (or one of
 the whole-stack targets above) at least once first.
 
