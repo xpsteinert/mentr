@@ -38,11 +38,11 @@ by default — see "GPU acceleration" below to use an NVIDIA GPU instead.
 Model downloads take a few minutes. Watch progress with:
 
 ```bash
-kubectl -n ai-stack logs -f job/mentr-ollama-model-init
+kubectl -n mentr logs -f job/mentr-ollama-model-init
 ```
 
 Wait until it prints `Model pull complete.` (check with `kubectl -n
-ai-stack get jobs` — `COMPLETIONS` should read `1/1`) before continuing
+mentr get jobs` — `COMPLETIONS` should read `1/1`) before continuing
 — Open WebUI will work before that, but chat responses will fail until
 both models are pulled.
 
