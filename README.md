@@ -1,4 +1,4 @@
-![mentr signature](source/signature_dark.png)
+![mentr signature](source/mentr-signature-dark.png)
 
 # mentr
 
