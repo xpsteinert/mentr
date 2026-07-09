@@ -30,7 +30,7 @@ k3d cluster create mentr --agents 2 -p "8080:80@loadbalancer" \
 kubectl apply -k kustomize/overlays
 ```
 
-The first command creates a 3-node k3d cluster (1 server + 2 agents)
+The first command creates the local folder where the models will be downladed, the second a 3-node k3d cluster (1 server + 2 agents)
 and bind-mounts a local `.ollama-models/` directory into every node, so
 downloaded models survive cluster teardown. The second deploys Ollama,
 Open WebUI, and a one-off Job that pulls both models. This runs on CPU
