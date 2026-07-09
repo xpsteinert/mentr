@@ -2,11 +2,8 @@
 
 # mentr
 
-**mentr** is a local onboarding assistant: new colleagues can ask a chat
-interface questions about internal documentation instead of hunting for
-it themselves — like a harbor pilot guiding new crew safely into port.
-Everything runs on your own machine via [k3d](https://k3d.io/) — no
-cloud, no external API calls, no data leaves your laptop.
+**mentr** is a local your local work body. You can ask a chat interface questions about internal documentation instead of hunting for
+it themselves. Everything runs on your own machine via [k3d](https://k3d.io/) — no cloud, no external API calls, no data leaves your laptop.
 
 This repo is a companion to the blog post *"Run your own onboarding
 assistant with local RAG and Ollama (k3d)."* It deploys
