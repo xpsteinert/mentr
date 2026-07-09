@@ -26,13 +26,13 @@ spec:
               containerPort: 8080
           env:
             - name: OLLAMA_BASE_URL
-              value: http://mentr-ollama.ai-stack.svc.cluster.local:11434
+              value: http://mentr-ollama.mentr.svc.cluster.local:11434
             - name: RAG_EMBEDDING_ENGINE
               value: ollama
             - name: RAG_EMBEDDING_MODEL
               value: nomic-embed-text
             - name: RAG_OLLAMA_BASE_URL
-              value: http://mentr-ollama.ai-stack.svc.cluster.local:11434
+              value: http://mentr-ollama.mentr.svc.cluster.local:11434
           volumeMounts:
             - name: webui-data
               mountPath: /app/backend/data
