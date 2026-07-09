@@ -1,0 +1,21 @@
+# Host is a placeholder — the "local" overlay patches it to
+# ki.localhost for k3d + Traefik. A future non-local overlay would
+# patch it to a real domain instead.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webui
+  namespace: ai-stack
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: mentr.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webui
+                port:
+                  number: 8080

@@ -1,0 +1,16 @@
+# storageClassName is intentionally left unset here — the "local"
+# overlay binds this claim to a static hostPath PersistentVolume so
+# downloaded models survive cluster recreation. A future non-local
+# overlay could instead leave this unset (default StorageClass) or
+# patch in a different one.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ollama-models
+  namespace: ai-stack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

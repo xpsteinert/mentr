@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mentr-ollama-models
+  namespace: ai-stack
+spec:
+  storageClassName: manual

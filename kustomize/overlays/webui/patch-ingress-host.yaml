@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mentr-webui
+  namespace: ai-stack
+spec:
+  rules:
+    - host: ki.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mentr-webui
+                port:
+                  number: 8080

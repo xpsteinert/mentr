@@ -1,0 +1,14 @@
+# Uses the cluster's default StorageClass (k3d's local-path
+# provisioner) — unlike the Ollama PVC, this data doesn't need to
+# survive cluster teardown for the demo, so no overlay patch needed.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: webui-data
+  namespace: ai-stack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

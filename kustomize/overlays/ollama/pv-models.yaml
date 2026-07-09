@@ -1,0 +1,22 @@
+# Backs the ollama-models PVC with a hostPath. This path must match
+# what k3d mounts into every node via
+#   --volume "$(pwd)/.ollama-models:/data/ollama-models@all"
+# (see README) so downloaded models are reused across
+# `k3d cluster delete` + recreate instead of being re-downloaded.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ollama-models-local
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: /data/ollama-models
+    type: DirectoryOrCreate
+  claimRef:
+    namespace: ai-stack
+    name: mentr-ollama-models

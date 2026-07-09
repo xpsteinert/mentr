@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mentr-ollama
+  namespace: ai-stack
+spec:
+  template:
+    spec:
+      containers:
+        - name: ollama
+          resources:
+            requests:
+              cpu: "1"
+              memory: 2Gi
+              # nvidia.com/gpu: "1"  # GPU-only host — see nvidia-device-plugin.yaml
+            limits:
+              cpu: "4"
+              memory: 6Gi
+              # nvidia.com/gpu: "1"  # GPU-only host — see nvidia-device-plugin.yaml
