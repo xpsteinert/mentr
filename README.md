@@ -5,8 +5,7 @@
 **mentr** is your local work body. You can ask a chat interface questions about internal documentation instead of hunting for
 it themselves. Everything runs on your own machine — no cloud, no external API calls, no data leaves your laptop.
 
-This repo is a companion to the blog post *"Run your own onboarding
-assistant with local RAG and Ollama."* It deploys
+This repo is a companion to my blog post about  [mentr - your local work buddy](https://phillipsteinert.de/blog/onboarding-assistant-local-rag-ollama). It deploys
 [Ollama](https://ollama.com/) (running the `llama3.2:3b` chat model and
 the `nomic-embed-text` embedding model) and
 [Open WebUI](https://openwebui.com/) (chat frontend with a built-in
