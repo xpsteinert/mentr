@@ -46,9 +46,9 @@ both models are pulled.
 
 ## Using it
 
-1. Open [http://ki.localhost:8080](http://ki.localhost:8080) in your
+1. Open [http://mentr.localhost:8080](http://mentr.localhost:8080) in your
    browser. Most browsers and OSes resolve `*.localhost` to `127.0.0.1`
-   automatically; if yours doesn't, add `127.0.0.1 ki.localhost` to
+   automatically; if yours doesn't, add `127.0.0.1 mentr.localhost` to
    `/etc/hosts`.
 2. Complete the sign-up form — the first account created becomes the
    admin. This is a purely local instance, so any email/password works.
@@ -127,7 +127,7 @@ kubectl apply -k kustomize/overlays/ollama      # hostPath PV + resource limits
 
 # Just Open WebUI
 kubectl apply -k kustomize/base/webui           # generic
-kubectl apply -k kustomize/overlays/webui       # ki.localhost ingress + resource limits
+kubectl apply -k kustomize/overlays/webui       # mentr.localhost ingress + resource limits
 ```
 
 The component-only targets don't include the `mentr` Namespace

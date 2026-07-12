@@ -5,7 +5,7 @@ metadata:
   namespace: mentr
 spec:
   rules:
-    - host: ki.localhost
+    - host: mentr.localhost
       http:
         paths:
           - path: /
