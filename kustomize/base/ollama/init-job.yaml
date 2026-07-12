@@ -16,9 +16,17 @@ spec:
         app: ollama-model-init
     spec:
       restartPolicy: OnFailure
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: ollama-pull
           image: ollama/ollama:latest
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
           env:
             - name: OLLAMA_HOST
               value: http://mentr-ollama:11434
